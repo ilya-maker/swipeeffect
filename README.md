@@ -1,6 +1,6 @@
 [DEMO LINK](https://swipeeffect.vercel.app/)
 
-Made an animation with a mobile swipe up and down
+Made an animation with a mobile swipe up and down\n
 When double clicked, all animation is played
 
 ## How to run this project
