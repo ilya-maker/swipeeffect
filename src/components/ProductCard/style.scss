@@ -1,0 +1,118 @@
+$colorToText: black;
+@import "../keyframes/style";
+
+.card {
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 200px;
+  height: 310px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: $colorToText;
+  border: 2px solid grey;
+  background-color: white;
+  position: relative;
+
+  &__delete {
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    left: 5px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: white;
+  }
+
+  &__cross:before,
+  &__cross:after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 1px;
+    top: 50%;
+    left: 29%;
+    z-index: 2;
+    border-radius: 8px;
+    background-color: black;
+  }
+
+  &__cross:before {
+    transform: rotate(45deg);
+  }
+
+  &__cross:after {
+    transform: rotate(-45deg);
+  }
+
+  &__photo {
+    height: 63%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 0;
+  }
+
+  &__img {
+    object-fit: cover;
+    height: 100%;
+    width: 120%;
+    border-radius: 0 0 120px 120px;
+  }
+
+  &__text {
+    margin-top: 10px;
+    height: 35%;
+    padding: 0 10px;
+    position: relative;
+    top: 0;
+  }
+
+  &__title,
+  &__subtitle,
+  &__description {
+    margin: 0;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  &__subtitle {
+    font-size: 0.9rem;
+    margin: 8px;
+  }
+
+  &__description {
+    font-size: 0.8rem;
+    color: #616162;
+  }
+}
+
+.blockIs {
+  &__down__img {
+    animation: easeOutElasticDownForImg 2s both;
+  }
+
+  &__up__img {
+    animation: easeOutElasticUp 2s both;
+  }
+}
+
+.blockIs {
+  &__down__text {
+    animation: easeOutElasticDown 2s both;
+  }
+
+  &__up__text {
+    animation: easeOutElasticUp 2s both;
+  }
+}
+
+.blockIs__allAnimations__img,
+.blockIs__allAnimations__text {
+  animation: easeOutElasticAllAnimations 2s both;
+}
