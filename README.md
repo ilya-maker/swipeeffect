@@ -1,5 +1,8 @@
 [DEMO LINK](https://swipeeffect.vercel.app/)
 
+Made an animation with a mobile swipe up and down
+When double clicked, all animation is played
+
 ## How to run this project
 1. Clone this repository.
 2. Open the project folder "TTsysGears" in your editor/IDE.
