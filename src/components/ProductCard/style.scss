@@ -1,4 +1,3 @@
-$colorToText: black;
 @import "../keyframes/style";
 
 .card {
@@ -6,11 +5,8 @@ $colorToText: black;
   box-sizing: border-box;
   width: 200px;
   height: 310px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   text-align: center;
-  color: $colorToText;
+  color: black;
   border: 2px solid grey;
   background-color: white;
   position: relative;
@@ -47,33 +43,34 @@ $colorToText: black;
     transform: rotate(-45deg);
   }
 
-  &__photo {
-    height: 63%;
-    display: flex;
-    justify-content: center;
+  &__text {
+    padding-top: 15px;
     position: relative;
-    top: 0;
+    background-color: white;
+    transform: translateX($valueForCenteringBlock);
+    width: 140%;
   }
 
   &__img {
-    object-fit: cover;
-    height: 100%;
-    width: 120%;
-    border-radius: 0 0 120px 120px;
-  }
-
-  &__text {
-    margin-top: 10px;
-    height: 35%;
-    padding: 0 10px;
+    background-image: url("../../imgs/arizona-burger_1584962897186.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    border-radius: 0 0 125px 125px;
+    overflow: hidden;
     position: relative;
+    height: 150px;
     top: 0;
+    left: 0;
+    transform: translateX($valueForCenteringBlock);
+    width: 140%;
   }
 
   &__title,
   &__subtitle,
   &__description {
-    margin: 0;
+    margin: 0 auto;
+    max-width: 170px;
   }
 
   &__title {
@@ -83,7 +80,7 @@ $colorToText: black;
 
   &__subtitle {
     font-size: 0.9rem;
-    margin: 8px;
+    margin: 8px auto;
   }
 
   &__description {
@@ -92,27 +89,32 @@ $colorToText: black;
   }
 }
 
-.blockIs {
-  &__down__img {
-    animation: easeOutElasticDownForImg 2s both;
-  }
-
-  &__up__img {
-    animation: easeOutElasticUp 2s both;
+.blockIs__down {
+  .card__img{
+    animation: imgDown 0.3s both;
   }
 }
 
-.blockIs {
-  &__down__text {
-    animation: easeOutElasticDown 2s both;
-  }
+.blockIs__up {
+  .card {
+    &__text{
+      animation: easeOutElasticUp 2s both;
+    }
 
-  &__up__text {
-    animation: easeOutElasticUp 2s both;
+    &__img{
+      animation: imgUp 0.3s both;
+    }
   }
 }
 
-.blockIs__allAnimations__img,
-.blockIs__allAnimations__text {
-  animation: easeOutElasticAllAnimations 2s both;
+.blockIs__middle__from__down {
+  .card__img{
+    animation: imgMiddle 0.3s both;
+  }
+}
+
+.blockIs__middle__from__up {
+  .card__text{
+    animation: middle__from__up 1s both;
+  }
 }
